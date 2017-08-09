@@ -14,6 +14,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'devise_token_auth'
+  gem 'pry-byebug'
 end
 
 group :development do
