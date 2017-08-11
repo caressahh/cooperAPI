@@ -1,0 +1,18 @@
+client = Twitter::REST::Client.new do |config|
+  config.consumer_key        = "M5VRxnHLw94rL3xRzk0iA"
+  config.consumer_secret     = "xX4f1Fd09bFe6CAPx2NIrgPV0ozBh9wiUyALGPnDM"
+  config.access_token        = "270458489-8rwbinmEBz4jXleXIPeNBUoiWW2YRpWF2tCXX4rV"
+  config.access_token_secret = "4O4iYqvFZJ8iCwWQig4sg9rAYs8Pb5d01dzKJcbUA"
+end
+
+client.search("to:heyamberwilkie", :result_type => "recent").take(5).collect do |tweet|
+  "#{tweet.user.screen_name}: #{tweet.text}"
+end
+
+client.search("to:heyamberwilkie ", result_type: "recent").take(5).each do |tweet|
+  puts tweet.text
+end
+
+client.search("to:s_igu", result_type: "recent").take(3).collect do |tweet|
+  "#{tweet.user.screen_name}: #{tweet.text}"
+end
